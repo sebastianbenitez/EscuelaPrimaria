@@ -6,19 +6,21 @@ namespace EscuelaPrimaria.Clases
 {
     class Alumno : INota
     {
-        private string _nombre;
-        private List<Materia> _materias;
-        public Alumno(string nombre, List<Materia> materias)
+        private string[] _descMaterias = {"Matematicas","Lengua","Musica","Educacion Fisica"};
+        public Alumno()
         {
-            _nombre = nombre;
-            _materias = materias;
+            Materias = new List<Materia>();
+            foreach (var dM in _descMaterias)
+            {
+                var materia = new Materia(dM);
+                Materias.Add(materia);
+            }
         }
+        public List<Materia> Materias { get; private set; } 
         public void GenerarNota()
-        {
-            Console.WriteLine("Alumno: {0}", _nombre);
-            
+        {            
             // Cada alumno cursa 4 materias
-            foreach (var materia in _materias)
+            foreach (var materia in Materias)
             {
                 materia.GenerarNota();
             }

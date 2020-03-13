@@ -6,24 +6,19 @@ namespace EscuelaPrimaria.Clases
 {
     class Primaria : INota
     {
-        private Curso _curso;
-        private List<Materia> _materias;
-        public Primaria(List<Materia> materias)
+        public Primaria()
         {
-            _materias = materias;
+            Cursos = new List<Curso>();
         }
+        public List<Curso> Cursos { get; private set; }
         public void GenerarNota()
         {
-            var nombreCurso = "";
-
             // La primaria tiene del 1ro al 7mo grado
             for (int i = 0; i < 7; i++)
             {
-                nombreCurso =  (i + 1) + "° Grado";
-                _curso = new Curso(nombreCurso, _materias);
-                _curso.GenerarNota();
-
-                Console.WriteLine();
+                var curso = new Curso();
+                curso.GenerarNota();
+                Cursos.Add(curso);
             }            
         }
     }

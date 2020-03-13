@@ -6,22 +6,21 @@ namespace EscuelaPrimaria.Clases
 {
     class Materia : INota
     {
-        private string _descripcion;
-        private Evaluacion _evaluacion;
         public Materia(string descripcion)
         {
-            _descripcion = descripcion;
+            Evaluaciones = new List<Evaluacion>();
+            Descripcion = descripcion;
         }
+        public string Descripcion { get; private set; }
+        public List<Evaluacion> Evaluaciones { get; private set; }
         public void GenerarNota()
         {
-            Console.WriteLine("Materia: {0}", _descripcion);
-
             // Por cada materia hay 3 evaluaciones
             for (int i = 0; i < 3; i++)
             {
-                _evaluacion = new Evaluacion();
-                Console.Write("Evaluacion: {0}, ", i+1);
-                _evaluacion.GenerarNota();
+                var evaluacion = new Evaluacion();
+                evaluacion.GenerarNota();
+                Evaluaciones.Add(evaluacion);
             }
         }
     }
