@@ -20,7 +20,8 @@ namespace EscuelaPrimaria.Clases
             Console.WriteLine("Curso: {0}", _descripcion);
             var nombreAlumno = "";
 
-            for (int i = 0; i < 5; i++)
+            // Cada curso tiene 20 alumnos
+            for (int i = 0; i < 20; i++)
             {
                 nombreAlumno = "Alumno " + (i+1);
                 _alumno = new Alumno(nombreAlumno, _materias);

@@ -16,6 +16,7 @@ namespace EscuelaPrimaria.Clases
         {
             var nombreCurso = "";
 
+            // La primaria tiene del 1ro al 7mo grado
             for (int i = 0; i < 7; i++)
             {
                 nombreCurso =  (i + 1) + "° Grado";

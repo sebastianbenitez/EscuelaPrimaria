@@ -17,6 +17,7 @@ namespace EscuelaPrimaria.Clases
         {
             Console.WriteLine("Alumno: {0}", _nombre);
             
+            // Cada alumno cursa 4 materias
             foreach (var materia in _materias)
             {
                 materia.GenerarNota();

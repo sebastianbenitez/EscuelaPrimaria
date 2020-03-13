@@ -16,6 +16,7 @@ namespace EscuelaPrimaria.Clases
         {
             Console.WriteLine("Materia: {0}", _descripcion);
 
+            // Por cada materia hay 3 evaluaciones
             for (int i = 0; i < 3; i++)
             {
                 _evaluacion = new Evaluacion();
